@@ -27,7 +27,7 @@
                 <option value="12">December</option>
             </select>
             <div class="hourCheck">
-                <input v-model="showThisHour" type="checkbox" name="" id="">
+                <input v-model="showThisHour" v-on:click="month = getMonth()" type="checkbox" name="" id="">
                 <p>Show available this hour</p>
             </div>
         </div>

@@ -1,7 +1,7 @@
 var app = new Vue({
     el: '#app',
     data: {
-        month: getMonth() + 1,
+        month: getMonth(),
         hour: getHour(),
         fishes: null,
         bugs: null,
@@ -15,6 +15,11 @@ var app = new Vue({
                 splitStr[i] = splitStr[i].charAt(0).toUpperCase() + splitStr[i].substring(1)
             }
             return splitStr.join(' ')
+        },
+        getMonth: function() {
+            var date = new Date();
+            var month = date.getMonth();
+            return month + 1;
         }
     },
     mounted: function() {
@@ -43,5 +48,5 @@ function getHour() {
 function getMonth() {
     var date = new Date();
     var month = date.getMonth();
-    return month;
+    return month + 1;
 }
