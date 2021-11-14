@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Catamaran&display=swap');
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -5,7 +7,7 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: 'Catamaran', sans-serif;
   color: black;
   background: url('bg.jpg') no-repeat center center fixed;
   background-size: cover;
@@ -15,14 +17,33 @@ li {
     list-style: none;
 }
 
+.month-input {
+    width: 100px;
+    margin: auto;
+    margin-top: 3em;
+    display: block;
+}
+
 .entry {
-    display: flex;
+    display: grid;
     align-items: center;
+    grid-template-columns: repeat(2, 1fr);
     width: 300px;
+    margin: 3em auto;
+    background: rgba(0, 0, 0, 0.4);
+    padding: 1em;
+    border-radius: 3px;
+}
+
+#lists {
+    display: grid;
+    /* align-items: center; */
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: space-around;
 }
 
 .time {
-    margin-left: 1em;
+    justify-self: flex-end; 
 }
 
 .entry img {

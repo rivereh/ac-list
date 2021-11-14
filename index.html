@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>AC List</title>
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 </head>
@@ -12,21 +12,54 @@
     
     <div id="app">
 
-        <input type="text" v-model.number="month">
+        <input class="month-input" type="text" v-model.number="month">
 
-        <ul>
-            <li class="entry" v-if="Object.values(fish.availability['month-array-northern']).includes(month)"
-                v-bind:key="fish.icon_uri" v-for="fish in fishes">
-                <img v-bind:src="fish['icon_uri']   " alt="">
-                <p>{{ titleCase(fish['name']['name-USen']) }}</p>
-                <p class="time">{{ fish['availability']['time'] }}</p>
-            </li>
-        </ul>
+        <div id="lists">
+            <ul class="fishes">
+                <li class="entry" v-if="Object.values(fish.availability['month-array-northern']).includes(month)"
+                    v-bind:key="fish.icon_uri" v-for="fish in fishes">
+                    <div>
+                        <img v-bind:src="fish['icon_uri']" alt="">
+                        <p>{{ titleCase(fish['name']['name-USen']) }}</p>
+                    </div>
+                    <div class="time">
+                        <p v-if="fish['availability']['time'] != 0">{{ fish['availability']['time'] }}</p>
+                        <p v-else>All Day</p>
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="bugs">
+                <li class="entry" v-if="Object.values(bug.availability['month-array-northern']).includes(month)"
+                    v-bind:key="bug.icon_uri" v-for="bug in bugs">
+                    <div>
+                        <img v-bind:src="bug['icon_uri']" alt="">
+                        <p>{{ titleCase(bug['name']['name-USen']) }}</p>
+                    </div>
+                    <div class="time">
+                        <p v-if="bug['availability']['time'] != 0">{{ bug['availability']['time'] }}</p>
+                        <p v-else>All Day</p>
+                    </div>
+                </li>
+            </ul>
+
+            <ul class="seacreatures">
+                <li class="entry" v-if="Object.values(seacreature.availability['month-array-northern']).includes(month)"
+                    v-bind:key="seacreature.icon_uri" v-for="seacreature in seacreatures">
+                    <div>
+                        <img v-bind:src="seacreature['icon_uri']   " alt="">
+                        <p>{{ titleCase(seacreature['name']['name-USen']) }}</p>
+                    </div>
+                    <div class="time">
+                        <p v-if="seacreature['availability']['time'] != 0">{{ seacreature['availability']['time'] }}</p>
+                        <p v-else>All Day</p>
+                    </div>
+                </li>
+            </ul>
         
+        </div>
     </div>
 
-
-
-    <script type="module" src="./main.js"></script>
+    <script src="./main.js"></script>
 </body>
 </html>

@@ -3,14 +3,11 @@ var app = new Vue({
     el: '#app',
     data: {
         month: 11,
-        fishes: null
+        fishes: null,
+        bugs: null,
+        seacreatures: null,
     },
     methods: {
-        getFishData: function() {
-            fetch("./data/fish.json")
-            .then(response => response.json())
-            .then(data => (this.fishes = data))
-        },
         titleCase: function(str) {
             var splitStr = str.toLowerCase().split(' ')
             for (var i = 0; i < splitStr.length; i++) {
@@ -22,6 +19,14 @@ var app = new Vue({
     mounted: function() {
         fetch("./data/fish.json")
         .then(response => response.json())
-        .then(data => (this.fishes = data));
+        .then(data => (this.fishes = data))
+
+        fetch("./data/bugs.json")
+        .then(response => response.json())
+        .then(data => (this.bugs = data))
+
+        fetch("./data/sea.json")
+        .then(response => response.json())
+        .then(data => (this.seacreatures = data))
     }
 })
