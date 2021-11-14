@@ -1,11 +1,12 @@
-
 var app = new Vue({
     el: '#app',
     data: {
-        month: 11,
+        month: getMonth() + 1,
+        hour: getHour(),
         fishes: null,
         bugs: null,
         seacreatures: null,
+        showThisHour: false
     },
     methods: {
         titleCase: function(str) {
@@ -30,3 +31,17 @@ var app = new Vue({
         .then(data => (this.seacreatures = data))
     }
 })
+
+// get current hour
+function getHour() {
+    var date = new Date();
+    var hour = date.getHours();
+    return hour;
+}
+
+// get current month
+function getMonth() {
+    var date = new Date();
+    var month = date.getMonth();
+    return month;
+}

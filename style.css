@@ -20,8 +20,20 @@ li {
 .month-input {
     width: 100px;
     margin: auto;
-    margin-top: 3em;
     display: block;
+}
+
+.intro {
+    width: 200px;
+    margin: auto;
+    margin-top: 3em;
+}
+
+.hourCheck {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin-top: 1em;
 }
 
 .entry {
