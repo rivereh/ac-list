@@ -5,16 +5,24 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
 </head>
 <body>
     
     <div id="app">
-        {{ message }}
 
-        <li v-bind:key="fish.icon_uri" v-for="fish in fishes">
-            {{ fish['file-name'] }}
-        </li>
+        <input type="text" v-model.number="month">
+
+        <ul>
+            <li class="entry" v-if="Object.values(fish.availability['month-array-northern']).includes(month)"
+                v-bind:key="fish.icon_uri" v-for="fish in fishes">
+                <img v-bind:src="fish['icon_uri']   " alt="">
+                <p>{{ titleCase(fish['name']['name-USen']) }}</p>
+                <p class="time">{{ fish['availability']['time'] }}</p>
+            </li>
+        </ul>
+        
     </div>
 
 

@@ -1,0 +1,32 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+  font-family: sans-serif;
+  color: black;
+  background: url('bg.jpg') no-repeat center center fixed;
+  background-size: cover;
+}
+
+li {
+    list-style: none;
+}
+
+.entry {
+    display: flex;
+    align-items: center;
+    width: 300px;
+}
+
+.time {
+    margin-left: 1em;
+}
+
+.entry img {
+    width: 50px;
+    height: 100%;
+    margin-right: 0.5em;
+}
