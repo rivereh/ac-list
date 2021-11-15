@@ -51,6 +51,7 @@ li {
     background: rgba(0, 0, 0, 0.4);
     padding: 1em;
     border-radius: 3px;
+    position: relative;
 }
 
 #lists {
@@ -77,6 +78,9 @@ li {
     cursor: pointer;
     /* text-align: left; */
     width: 10px;
+    position: absolute;
+    top: 5px;
+    right: 10px;
 }
 
 @media screen and (max-width: 600px) {

@@ -47,7 +47,7 @@
                         <p v-if="fish['availability']['time'] != 0">{{ fish['availability']['time'] }}</p>
                         <p v-else>All Day</p>
                     </div>
-                    <button v-on:click="addToChecked($event, fish['file-name'])">X</button>
+                    <button v-on:click="addToChecked($event, fish['file-name'])">✓</button>
                 </li>
             </ul>
 
@@ -64,7 +64,7 @@
                         <p v-if="bug['availability']['time'] != 0">{{ bug['availability']['time'] }}</p>
                         <p v-else>All Day</p>
                     </div>
-                    <button v-on:click="addToChecked($event, bug['file-name'])">X</button>
+                    <button v-on:click="addToChecked($event, bug['file-name'])">✓</button>
                 </li>
             </ul>
 
@@ -81,7 +81,7 @@
                         <p v-if="seacreature['availability']['time'] != 0">{{ seacreature['availability']['time'] }}</p>
                         <p v-else>All Day</p>
                     </div>
-                    <button v-on:click="addToChecked($event, seacreature['file-name'])">X</button>
+                    <button v-on:click="addToChecked($event, seacreature['file-name'])">✓</button>
                 </li>
             </ul>
         </div>
