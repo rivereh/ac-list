@@ -8,6 +8,7 @@
     <link rel="shortcut icon" type="image/x-icon" href="favicon.ico?">
     <link rel="stylesheet" href="style.css">
     <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+    <script src="https://kit.fontawesome.com/3bba3f0135.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div id="app">
@@ -47,7 +48,8 @@
                         <p v-if="fish['availability']['time'] != 0">{{ fish['availability']['time'] }}</p>
                         <p v-else>All Day</p>
                     </div>
-                    <button v-on:click="addToChecked($event, fish['file-name'])">✓</button>
+                    <i v-on:click="addToChecked($event, fish['file-name'])" class="fas fa-check check"></i>
+                    <i @click="expand($event)" class="fas fa-chevron-down expand"></i>
                 </li>
             </ul>
 
@@ -64,7 +66,8 @@
                         <p v-if="bug['availability']['time'] != 0">{{ bug['availability']['time'] }}</p>
                         <p v-else>All Day</p>
                     </div>
-                    <button v-on:click="addToChecked($event, bug['file-name'])">✓</button>
+                    <i v-on:click="addToChecked($event, fish['file-name'])" class="fas fa-check check"></i>
+                    <i @click="expand($event)" class="fas fa-chevron-down expand"></i>
                 </li>
             </ul>
 
@@ -81,7 +84,8 @@
                         <p v-if="seacreature['availability']['time'] != 0">{{ seacreature['availability']['time'] }}</p>
                         <p v-else>All Day</p>
                     </div>
-                    <button v-on:click="addToChecked($event, seacreature['file-name'])">✓</button>
+                    <i v-on:click="addToChecked($event, fish['file-name'])" class="fas fa-check check"></i>
+                    <i @click="expand($event)" class="fas fa-chevron-down expand"></i>
                 </li>
             </ul>
         </div>

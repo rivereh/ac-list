@@ -31,6 +31,10 @@ var app = new Vue({
             this.checked = []
             localStorage.setItem("checked", this.checked)
             location.reload()
+        },
+        expand: function(event) {
+            event.target.parentElement.classList.toggle("expanded")
+            event.target.classList.toggle("expanded")
         }
     },
     mounted: function() {

@@ -52,7 +52,22 @@ li {
     padding: 1em;
     border-radius: 3px;
     position: relative;
-    transition: all 0.5s ease;
+    transition: all 0.3s ease;
+    border: 1px solid rgba(0, 0, 0, 0.4);
+    height: 150px;
+}
+
+.entry:hover {
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.4);
+}
+
+.entry:active {
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.entry.expanded {
+    transition: all 0.3s ease;
+    height: 400px;
 }
 
 #lists {
@@ -72,7 +87,7 @@ li {
     margin-right: 0.5em;
 }
 
-.entry button {
+.entry .check {
     background: none;
     border: none;
     font-size: 1em;
@@ -80,8 +95,24 @@ li {
     /* text-align: left; */
     width: 10px;
     position: absolute;
-    top: 5px;
-    right: 10px;
+    top: 10px;
+    right: 15px;
+}
+
+.entry .expand {
+    background: none;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+    text-align: center;
+    grid-column: span 2;
+    width: 10px;
+    margin: auto;
+    transition: transform 0.3s ease;
+}
+
+.entry .expand.expanded {
+    transform: rotate(180deg);
 }
 
 @media screen and (max-width: 600px) {
