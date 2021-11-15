@@ -39,7 +39,7 @@
                     || !showThisHour && Object.values(fish.availability['month-array-northern']).includes(month)"
                     v-bind:key="fish.icon_uri" v-for="fish in fishes">
                     <div>
-                        <img v-bind:src="fish['icon_uri']" alt="">
+                        <img v-bind:src="'img/fish/' + fish['file-name'] + '.png'" alt="">
                         <p>{{ titleCase(fish['name']['name-USen']) }}</p>
                     </div>
                     <div class="time">
@@ -55,7 +55,7 @@
                 || !showThisHour && Object.values(bug.availability['month-array-northern']).includes(month)"
                     v-bind:key="bug.icon_uri" v-for="bug in bugs">
                     <div>
-                        <img v-bind:src="bug['icon_uri']" alt="">
+                        <img v-bind:src="'img/bugs/' + bug['file-name'] + '.png'" alt="">
                         <p>{{ titleCase(bug['name']['name-USen']) }}</p>
                     </div>
                     <div class="time">
@@ -71,7 +71,7 @@
                 || !showThisHour && Object.values(seacreature.availability['month-array-northern']).includes(month)"
                     v-bind:key="seacreature.icon_uri" v-for="seacreature in seacreatures">
                     <div>
-                        <img v-bind:src="seacreature['icon_uri']   " alt="">
+                        <img v-bind:src="'img/sea/' + seacreature['file-name'] + '.png'" alt="">
                         <p>{{ titleCase(seacreature['name']['name-USen']) }}</p>
                     </div>
                     <div class="time">
