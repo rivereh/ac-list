@@ -30,6 +30,7 @@ var app = new Vue({
         resetChecked: function() {
             this.checked = []
             localStorage.setItem("checked", this.checked)
+            location.reload()
         }
     },
     mounted: function() {
