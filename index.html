@@ -49,7 +49,11 @@
                         <p v-else>All Day</p>
                     </div>
                     <i v-on:click="addToChecked($event, fish['file-name'])" class="fas fa-check check"></i>
-                    <i @click="expand($event)" class="fas fa-chevron-down expand"></i>
+                    <!-- <i @click="expand($event)" class="fas fa-chevron-down expand"></i> -->
+                    <div class="info">
+                        <p>{{ fish.price }} Bells</p>
+                        <p>Location: {{ fish['availability'].location }}</p>
+                    </div>
                 </li>
             </ul>
 
@@ -67,7 +71,11 @@
                         <p v-else>All Day</p>
                     </div>
                     <i v-on:click="addToChecked($event, bug['file-name'])" class="fas fa-check check"></i>
-                    <i @click="expand($event)" class="fas fa-chevron-down expand"></i>
+                    <!-- <i @click="expand($event)" class="fas fa-chevron-down expand"></i> -->
+                    <div class="info">
+                        <p>{{ bug.price }} Bells</p>
+                        <p>Location: {{ bug['availability'].location }}</p>
+                    </div>
                 </li>
             </ul>
 
@@ -85,7 +93,11 @@
                         <p v-else>All Day</p>
                     </div>
                     <i v-on:click="addToChecked($event, seacreature['file-name'])" class="fas fa-check check"></i>
-                    <i @click="expand($event)" class="fas fa-chevron-down expand"></i>
+                    <!-- <i @click="expand($event)" class="fas fa-chevron-down expand"></i> -->
+                    <div class="info">
+                        <p>{{ seacreature.price }} Bells</p>
+                        <!-- <p>Location: {{ fish['availability'].location }}</p> -->
+                    </div>
                 </li>
             </ul>
         </div>
