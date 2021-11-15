@@ -30,13 +30,14 @@
                 <input v-model="showThisHour" v-on:click="month = getMonth()" type="checkbox" name="" id="">
                 <p>Show available this hour</p>
             </div>
+            <button @click="resetChecked()">Reset Checked</button>
         </div>
         
         <div id="lists">
             <ul class="fishes">
                 <li class="entry" v-if="showThisHour && Object.values(fish.availability['month-array-northern']).includes(month) 
-                    && Object.values(fish.availability['time-array']).includes(hour) 
-                    || !showThisHour && Object.values(fish.availability['month-array-northern']).includes(month)"
+                    && Object.values(fish.availability['time-array']).includes(hour)  && !checked.includes(fish['file-name'])
+                    || !showThisHour && Object.values(fish.availability['month-array-northern']).includes(month) && !checked.includes(fish['file-name'])"
                     v-bind:key="fish.icon_uri" v-for="fish in fishes">
                     <div>
                         <img v-bind:src="'img/fish/' + fish['file-name'] + '.png'" alt="">
@@ -46,13 +47,14 @@
                         <p v-if="fish['availability']['time'] != 0">{{ fish['availability']['time'] }}</p>
                         <p v-else>All Day</p>
                     </div>
+                    <button v-on:click="addToChecked($event, fish['file-name'])">X</button>
                 </li>
             </ul>
 
             <ul class="bugs">
                 <li class="entry" v-if="showThisHour && Object.values(bug.availability['month-array-northern']).includes(month) 
-                && Object.values(bug.availability['time-array']).includes(hour) 
-                || !showThisHour && Object.values(bug.availability['month-array-northern']).includes(month)"
+                && Object.values(bug.availability['time-array']).includes(hour)  && !checked.includes(bug['file-name'])
+                || !showThisHour && Object.values(bug.availability['month-array-northern']).includes(month) && !checked.includes(bug['file-name'])"
                     v-bind:key="bug.icon_uri" v-for="bug in bugs">
                     <div>
                         <img v-bind:src="'img/bugs/' + bug['file-name'] + '.png'" alt="">
@@ -62,13 +64,14 @@
                         <p v-if="bug['availability']['time'] != 0">{{ bug['availability']['time'] }}</p>
                         <p v-else>All Day</p>
                     </div>
+                    <button v-on:click="addToChecked($event, bug['file-name'])">X</button>
                 </li>
             </ul>
 
             <ul class="seacreatures">
                 <li class="entry" v-if="showThisHour && Object.values(seacreature.availability['month-array-northern']).includes(month) 
-                && Object.values(seacreature.availability['time-array']).includes(hour) 
-                || !showThisHour && Object.values(seacreature.availability['month-array-northern']).includes(month)"
+                && Object.values(seacreature.availability['time-array']).includes(hour)  && !checked.includes(seacreature['file-name'])
+                || !showThisHour && Object.values(seacreature.availability['month-array-northern']).includes(month) && !checked.includes(seacreature['file-name'])"
                     v-bind:key="seacreature.icon_uri" v-for="seacreature in seacreatures">
                     <div>
                         <img v-bind:src="'img/sea/' + seacreature['file-name'] + '.png'" alt="">
@@ -78,6 +81,7 @@
                         <p v-if="seacreature['availability']['time'] != 0">{{ seacreature['availability']['time'] }}</p>
                         <p v-else>All Day</p>
                     </div>
+                    <button v-on:click="addToChecked($event, seacreature['file-name'])">X</button>
                 </li>
             </ul>
         </div>

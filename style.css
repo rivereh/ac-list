@@ -29,6 +29,12 @@ li {
     margin-top: 3em;
 }
 
+.intro button {
+    display: block;
+    margin: auto;
+    margin-top: 1em;
+}
+
 .hourCheck {
     display: flex;
     align-items: center;
@@ -62,6 +68,15 @@ li {
     width: 50px;
     height: 100%;
     margin-right: 0.5em;
+}
+
+.entry button {
+    background: none;
+    border: none;
+    font-size: 1em;
+    cursor: pointer;
+    /* text-align: left; */
+    width: 10px;
 }
 
 @media screen and (max-width: 600px) {

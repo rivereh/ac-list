@@ -1,3 +1,6 @@
+
+
+
 var app = new Vue({
     el: '#app',
     data: {
@@ -6,7 +9,8 @@ var app = new Vue({
         fishes: null,
         bugs: null,
         seacreatures: null,
-        showThisHour: false
+        showThisHour: false,
+        checked: []
     },
     methods: {
         titleCase: function(str) {
@@ -20,6 +24,15 @@ var app = new Vue({
             var date = new Date();
             var month = date.getMonth();
             return month + 1;
+        },
+        addToChecked: function(event, name) {
+            this.checked.push(name)
+            localStorage.setItem("checked", this.checked)
+            event.target.parentElement.remove()
+        },
+        resetChecked: function() {
+            this.checked = []
+            localStorage.setItem("checked", this.checked)
         }
     },
     mounted: function() {
@@ -34,6 +47,11 @@ var app = new Vue({
         fetch("./data/sea.json")
         .then(response => response.json())
         .then(data => (this.seacreatures = data))
+
+        if (localStorage.getItem("checked") != null) {
+            this.checked = localStorage.getItem("checked").split(",")
+        }
+        console.log(this.checked)
     }
 })
 
