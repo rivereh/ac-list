@@ -69,7 +69,11 @@ li {
     height: 400px;
 }
 
-#lists {
+.ctext {
+    text-align: center;
+}
+
+.lists {
     display: grid;
     /* align-items: center; */
     grid-template-columns: repeat(3, 1fr);

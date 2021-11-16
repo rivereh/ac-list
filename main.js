@@ -25,7 +25,12 @@ var app = new Vue({
         addToChecked: function(event, name) {
             this.checked.push(name)
             localStorage.setItem("checked", this.checked)
-            event.target.parentElement.remove()
+            // event.target.parentElement.remove()
+        },
+        removeFromChecked: function(event, name) {
+            this.checked.splice(this.checked.indexOf(name), 1)
+            localStorage.setItem("checked", this.checked)
+            // event.target.parentElement.remove()
         },
         resetChecked: function() {
             this.checked = []
