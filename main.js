@@ -22,15 +22,13 @@ var app = new Vue({
             var month = date.getMonth();
             return month + 1;
         },
-        addToChecked: function(event, name) {
+        addToChecked: function(name) {
             this.checked.push(name)
             localStorage.setItem("checked", this.checked)
-            // event.target.parentElement.remove()
         },
-        removeFromChecked: function(event, name) {
+        removeFromChecked: function(name) {
             this.checked.splice(this.checked.indexOf(name), 1)
             localStorage.setItem("checked", this.checked)
-            // event.target.parentElement.remove()
         },
         resetChecked: function() {
             this.checked = []
@@ -61,18 +59,15 @@ var app = new Vue({
         if (localStorage.getItem("checked") != null) {
             this.checked = localStorage.getItem("checked").split(",")
         }
-        // console.log(this.checked)
     }
 })
 
-// get current hour
 function getHour() {
     var date = new Date();
     var hour = date.getHours();
     return hour;
 }
 
-// get current month
 function getMonth() {
     var date = new Date();
     var month = date.getMonth();
