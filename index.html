@@ -13,6 +13,7 @@
 <body>
     <div id="app">
         <div class="intro">
+            <h1>Animal Crossing List</h1>
             <select  class="month-input" v-model.number="month">
                 <option value="1">January</option>
                 <option value="2">February</option>
@@ -35,6 +36,7 @@
         
         <div class="lists">
             <ul class="fishes">
+                <h1>Fishes</h1>
                 <li class="entry" v-if="showThisHour && Object.values(fish.availability['month-array-northern']).includes(month) 
                     && Object.values(fish.availability['time-array']).includes(hour)  && !checked.includes(fish['file-name'])
                     || !showThisHour && Object.values(fish.availability['month-array-northern']).includes(month) && !checked.includes(fish['file-name'])"
@@ -63,6 +65,7 @@
             </ul>
 
             <ul class="bugs">
+                <h1>Bugs</h1>
                 <li class="entry" v-if="showThisHour && Object.values(bug.availability['month-array-northern']).includes(month) 
                 && Object.values(bug.availability['time-array']).includes(hour)  && !checked.includes(bug['file-name'])
                 || !showThisHour && Object.values(bug.availability['month-array-northern']).includes(month) && !checked.includes(bug['file-name'])"
@@ -87,6 +90,7 @@
             </ul>
 
             <ul class="seacreatures">
+                <h1>Sea Creatures</h1>
                 <li class="entry" v-if="showThisHour && Object.values(seacreature.availability['month-array-northern']).includes(month) 
                 && Object.values(seacreature.availability['time-array']).includes(hour)  && !checked.includes(seacreature['file-name'])
                 || !showThisHour && Object.values(seacreature.availability['month-array-northern']).includes(month) && !checked.includes(seacreature['file-name'])"
