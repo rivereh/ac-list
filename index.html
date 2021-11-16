@@ -56,7 +56,10 @@
                     </div>
                     <div class="info-additional">
                         <p>{{ numberWithCommas(fish.price) }} Bells</p>
-                        <p>Size: {{ fish.shadow }}</p>
+                        <a class="tooltip" href="">
+                            <p>Size: {{ fish.shadow }}</p>
+                            <span><img src="./img/shadowsizes.jpg"></span>
+                        </a>
                     </div>
                 </li>
             </ul>
@@ -146,7 +149,10 @@
                     </div>
                     <div class="info-additional">
                         <p>{{ numberWithCommas(fish.price) }} Bells</p>
-                        <p>Size: {{ fish.shadow }}</p>
+                        <a class="tooltip" href="">
+                            <p>Size: {{ fish.shadow }}</p>
+                            <span><img src="./img/shadowsizes.jpg"></span>
+                        </a>
                     </div>
                 </li>
             </ul>
@@ -204,7 +210,6 @@
                 </li>
             </ul>
         </div>
-
     </div>
     <script src="./main.js"></script>
 </body>

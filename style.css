@@ -144,3 +144,33 @@ li {
         font-size: 0.8em;
     }
 }
+
+.tooltip {
+    text-decoration:none;
+    position:relative;
+    color: black;
+}
+
+.tooltip span {
+    display:none;
+    border-radius:3px;
+    color:black;
+    background:rgba(0, 0, 0, 0.8); 
+}
+
+.tooltip span img {
+    width: 100%;
+    float:left;
+}
+
+.tooltip:hover span {
+    display:block;
+    position:absolute;
+    top:0;
+    left:0;
+    z-index:1000;
+    width: 500px;
+    border:1px solid black;
+    overflow:hidden;
+    padding:5px;
+}
