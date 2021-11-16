@@ -31,7 +31,6 @@
                 <input v-model="showThisHour" v-on:click="month = getMonth()" type="checkbox" name="" id="">
                 <p>Show available this hour</p>
             </div>
-            <button @click="resetChecked()">Reset Checked</button>
         </div>
         
         <div class="lists">
@@ -102,7 +101,11 @@
             </ul>
         </div>
 
-        <h1 v-if="checked.length > 1" class="ctext">Checked</h1>
+        <div v-if="checked.length > 1" class="c-text">
+            <h1>Checked</h1>
+            <button @click="resetChecked()">Reset All Checked</button>
+        </div>
+        
 
         <div class="lists caught-list">
             <ul class="fishes">
