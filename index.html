@@ -44,14 +44,19 @@
                         <p>{{ titleCase(fish['name']['name-USen']) }}</p>
                     </div>
                     <div class="time">
-                        <p v-if="fish['availability']['time'] != 0">{{ fish['availability']['time'] }}</p>
-                        <p v-else>All Day</p>
+                        <!-- <p v-if="fish['availability']['time'] != 0">{{ fish['availability']['time'] }}</p>
+                        <p v-else>All Day</p> -->
                     </div>
                     <i v-on:click="addToChecked($event, fish['file-name'])" class="fas fa-check check"></i>
                     <!-- <i @click="expand($event)" class="fas fa-chevron-down expand"></i> -->
                     <div class="info">
-                        <p>{{ fish.price }} Bells</p>
+                        <p v-if="fish['availability']['time'] != 0">{{ fish['availability']['time'] }}</p>
+                        <p v-else>All Day</p>
                         <p>Location: {{ fish['availability'].location }}</p>
+                    </div>
+                    <div class="info-additional">
+                        <p>{{ numberWithCommas(fish.price) }} Bells</p>
+                        <p>Size: {{ fish.shadow }}</p>
                     </div>
                 </li>
             </ul>
@@ -66,14 +71,23 @@
                         <p>{{ titleCase(bug['name']['name-USen']) }}</p>
                     </div>
                     <div class="time">
-                        <p v-if="bug['availability']['time'] != 0">{{ bug['availability']['time'] }}</p>
-                        <p v-else>All Day</p>
+                        <!-- <p v-if="bug['availability']['time'] != 0">{{ bug['availability']['time'] }}</p>
+                        <p v-else>All Day</p> -->
                     </div>
                     <i v-on:click="addToChecked($event, bug['file-name'])" class="fas fa-check check"></i>
                     <!-- <i @click="expand($event)" class="fas fa-chevron-down expand"></i> -->
-                    <div class="info">
+                    <!-- <div class="info">
                         <p>{{ bug.price }} Bells</p>
                         <p>Location: {{ bug['availability'].location }}</p>
+                    </div> -->
+                    <div class="info">
+                        <p v-if="bug['availability']['time'] != 0">{{ bug['availability']['time'] }}</p>
+                        <p v-else>All Day</p>
+                        <p>Location: {{ bug['availability'].location }}</p>
+                    </div>
+                    <div class="info-additional">
+                        <p>{{ numberWithCommas(bug.price) }} Bells</p>
+                        <!-- <p>Size: {{ fish.shadow }}</p> -->
                     </div>
                 </li>
             </ul>
@@ -88,14 +102,18 @@
                         <p>{{ titleCase(seacreature['name']['name-USen']) }}</p>
                     </div>
                     <div class="time">
-                        <p v-if="seacreature['availability']['time'] != 0">{{ seacreature['availability']['time'] }}</p>
-                        <p v-else>All Day</p>
+                        <!-- <p v-if="seacreature['availability']['time'] != 0">{{ seacreature['availability']['time'] }}</p>
+                        <p v-else>All Day</p> -->
                     </div>
                     <i v-on:click="addToChecked($event, seacreature['file-name'])" class="fas fa-check check"></i>
                     <!-- <i @click="expand($event)" class="fas fa-chevron-down expand"></i> -->
                     <div class="info">
-                        <p>{{ seacreature.price }} Bells</p>
-                        <!-- <p>Location: {{ fish['availability'].location }}</p> -->
+                        <p v-if="seacreature['availability']['time'] != 0">{{ seacreature['availability']['time'] }}</p>
+                        <p v-else>All Day</p>
+                        <p>Size: {{ seacreature.shadow }}</p>
+                    </div>
+                    <div class="info-additional">
+                        <p>{{ numberWithCommas(seacreature.price) }} Bells</p>
                     </div>
                 </li>
             </ul>
@@ -116,14 +134,19 @@
                         <p>{{ titleCase(fish['name']['name-USen']) }}</p>
                     </div>
                     <div class="time">
-                        <p v-if="fish['availability']['time'] != 0">{{ fish['availability']['time'] }}</p>
-                        <p v-else>All Day</p>
+                        <!-- <p v-if="fish['availability']['time'] != 0">{{ fish['availability']['time'] }}</p>
+                        <p v-else>All Day</p> -->
                     </div>
                     <i v-on:click="removeFromChecked($event, fish['file-name'])" class="fas fa-times check"></i>
                     <!-- <i @click="expand($event)" class="fas fa-chevron-down expand"></i> -->
                     <div class="info">
-                        <p>{{ fish.price }} Bells</p>
+                        <p v-if="fish['availability']['time'] != 0">{{ fish['availability']['time'] }}</p>
+                        <p v-else>All Day</p>
                         <p>Location: {{ fish['availability'].location }}</p>
+                    </div>
+                    <div class="info-additional">
+                        <p>{{ numberWithCommas(fish.price) }} Bells</p>
+                        <p>Size: {{ fish.shadow }}</p>
                     </div>
                 </li>
             </ul>
@@ -136,14 +159,23 @@
                         <p>{{ titleCase(bug['name']['name-USen']) }}</p>
                     </div>
                     <div class="time">
-                        <p v-if="bug['availability']['time'] != 0">{{ bug['availability']['time'] }}</p>
-                        <p v-else>All Day</p>
+                        <!-- <p v-if="bug['availability']['time'] != 0">{{ bug['availability']['time'] }}</p>
+                        <p v-else>All Day</p> -->
                     </div>
                     <i v-on:click="removeFromChecked($event, bug['file-name'])" class="fas fa-times check"></i>
                     <!-- <i @click="expand($event)" class="fas fa-chevron-down expand"></i> -->
-                    <div class="info">
+                    <!-- <div class="info">
                         <p>{{ bug.price }} Bells</p>
                         <p>Location: {{ bug['availability'].location }}</p>
+                    </div> -->
+                    <div class="info">
+                        <p v-if="bug['availability']['time'] != 0">{{ bug['availability']['time'] }}</p>
+                        <p v-else>All Day</p>
+                        <p>Location: {{ bug['availability'].location }}</p>
+                    </div>
+                    <div class="info-additional">
+                        <p>{{ numberWithCommas(bug.price) }} Bells</p>
+                        <!-- <p>Size: {{ fish.shadow }}</p> -->
                     </div>
                 </li>
             </ul>
@@ -156,14 +188,18 @@
                         <p>{{ titleCase(seacreature['name']['name-USen']) }}</p>
                     </div>
                     <div class="time">
-                        <p v-if="seacreature['availability']['time'] != 0">{{ seacreature['availability']['time'] }}</p>
-                        <p v-else>All Day</p>
+                        <!-- <p v-if="seacreature['availability']['time'] != 0">{{ seacreature['availability']['time'] }}</p>
+                        <p v-else>All Day</p> -->
                     </div>
                     <i v-on:click="removeFromChecked($event, seacreature['file-name'])" class="fas fa-times check"></i>
                     <!-- <i @click="expand($event)" class="fas fa-chevron-down expand"></i> -->
                     <div class="info">
-                        <p>{{ seacreature.price }} Bells</p>
-                        <!-- <p>Location: {{ fish['availability'].location }}</p> -->
+                        <p v-if="seacreature['availability']['time'] != 0">{{ seacreature['availability']['time'] }}</p>
+                        <p v-else>All Day</p>
+                        <p>Size: {{ seacreature.shadow }}</p>
+                    </div>
+                    <div class="info-additional">
+                        <p>{{ numberWithCommas(seacreature.price) }} Bells</p>
                     </div>
                 </li>
             </ul>

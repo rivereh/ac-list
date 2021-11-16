@@ -37,6 +37,9 @@ var app = new Vue({
             localStorage.setItem("checked", this.checked)
             location.reload()
         },
+        numberWithCommas: function(x) {
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",")
+        },
         expand: function(event) {
             event.target.parentElement.classList.toggle("expanded")
             event.target.classList.toggle("expanded")
@@ -58,7 +61,7 @@ var app = new Vue({
         if (localStorage.getItem("checked") != null) {
             this.checked = localStorage.getItem("checked").split(",")
         }
-        console.log(this.checked)
+        // console.log(this.checked)
     }
 })
 
